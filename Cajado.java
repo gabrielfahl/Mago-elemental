@@ -1,21 +1,40 @@
 class Cajado {
-    public void executarPoderElemental(PedraElemento pedra1, PedraElemento pedra2) {
-        if (pedra1.tipo.equals(pedra2.tipo)) {
-            System.out.println("Poder de " + pedra1.tipo);
-        } else {
-            if ((pedra1 instanceof PedraFogo && pedra2 instanceof PedraAr) ||
-                (pedra1 instanceof PedraAr && pedra2 instanceof PedraFogo)) {
-                System.out.println("Combustão");
-            } else if ((pedra1 instanceof PedraFogo && pedra2 instanceof PedraTerra) ||
-                       (pedra1 instanceof PedraTerra && pedra2 instanceof PedraFogo)) {
-                System.out.println("Lava");
-            } else if ((pedra1 instanceof PedraTerra && pedra2 instanceof PedraAgua) ||
-                       (pedra1 instanceof PedraAgua && pedra2 instanceof PedraTerra)) {
-                System.out.println("Planta");
-            } else if ((pedra1 instanceof PedraAgua && pedra2 instanceof PedraAr) ||
-                       (pedra1 instanceof PedraAr && pedra2 instanceof PedraAgua)) {
-                System.out.println("Neve");
-            }
-        }
+public void poderelemental(PedraElemento pedra1, PedraElemento pedra2) {
+    if (pedra1.getClass() == pedra2.getClass()) {
+        System.out.println("Poder de " + pedra1.tipo);
+    } else {
+        System.out.println("Combinação desconhecida");
     }
+}
+//combustao
+public void poderelemental(PedraFogo pedraFogo, PedraAr pedraAr) {
+    System.out.println("Poder de Combustão");
+}
+public void poderelemental(PedraAr pedraAr, PedraFogo pedraFogo) {
+    System.out.println("Poder de Combustão");
+}
+
+//lava
+public void poderelemental(PedraFogo pedraFogo, PedraTerra pedraTerra) {
+    System.out.println("Poder de Lava");
+}
+public void poderelemental(PedraTerra pedraTerra, PedraFogo pedraFogo) {
+    System.out.println("Poder de Lava");
+}
+
+//planta
+public void poderelemental(PedraTerra pedraTerra, PedraAgua pedraAgua) {
+    System.out.println("Poder de Planta");
+}
+public void poderelemental(PedraAgua pedraAgua, PedraTerra pedraTerra) {
+    System.out.println("Poder de Planta");
+}
+
+//neve
+public void poderelemental(PedraAgua pedraAgua, PedraAr pedraAr) {
+    System.out.println("Poder de Neve");
+}
+public void poderelemental(PedraAr pedraAr, PedraAgua pedraAgua) {
+    System.out.println("Poder de Neve");
+}
 }
